@@ -1,2 +1,2 @@
-# wenda
-chongdingdahui_zhishichaoren_baiwanyingxiong_baiwanyingjia
+# 问答软件
+每晚更新
