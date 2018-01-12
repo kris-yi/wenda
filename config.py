@@ -26,6 +26,14 @@ def config(app,phone):
                 'pixels_right': 639,
                 'pixels_bottom': 445
             }
+        elif phone=='iphone7p':
+            data = {
+                'phone_system': 'ios',
+                'pixels_left': 0,
+                'pixels_top': 343,
+                'pixels_right': 1080,
+                'pixels_bottom': 756
+            }
     elif app=='百万英雄':
         if phone=='iphone8':
             data = {
