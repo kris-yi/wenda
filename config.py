@@ -9,14 +9,6 @@ def config(app,phone):
                 'pixels_right' : 750,
                 'pixels_bottom' : 350
             }
-        elif phone=='华为p9':
-            data = {
-                'phone_system': 'android',
-                'pixels_left': 0,
-                'pixels_top': 153,
-                'pixels_right': 1080,
-                'pixels_bottom': 350
-            }
     elif app=='冲顶大会':
         if phone=='iphone8':
             data = {
@@ -25,6 +17,14 @@ def config(app,phone):
                 'pixels_top': 240,
                 'pixels_right': 750,
                 'pixels_bottom': 525
+            }
+        elif phone=='iphone6':
+            data = {
+                'phone_system': 'ios',
+                'pixels_left': 0,
+                'pixels_top': 203,
+                'pixels_right': 639,
+                'pixels_bottom': 445
             }
     elif app=='百万英雄':
         if phone=='iphone8':
