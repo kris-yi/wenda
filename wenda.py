@@ -1,6 +1,8 @@
 from PIL import ImageGrab, Image
 from aip import AipOcr
 import webbrowser, time, os, requests, urllib.parse, platform, config, json,sys
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 # 获取命令行参数
 try:
