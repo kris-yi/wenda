@@ -5,7 +5,7 @@
 ```
 #备注：现目前只支持iphone8，暂时不知道其他手机型号屏幕大小，需要支持其他手机型号的可以加QQ群：560914056
 ```
-#Windows+Android操作步骤
+## Windows+Android操作步骤
 ```
 第一步：下载python最新版本，下载地址https://www.python.org/ ，需要将python加入环境变量
 ```
