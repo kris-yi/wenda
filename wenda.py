@@ -1,13 +1,14 @@
 from PIL import ImageGrab, Image
 from aip import AipOcr
-import webbrowser, time, os, requests, urllib.parse, platform, config, json,sys
+import webbrowser, time, os, requests, urllib.parse, platform, config, json, sys
+
 reload(sys)
 sys.setdefaultencoding('utf8')
 
 # 获取命令行参数
 try:
-    cmdapp=sys.argv[1]
-    cmdphone=sys.argv[2]
+    cmdapp = sys.argv[1]
+    cmdphone = sys.argv[2]
 except:
     print(u'请输入APP名字和手机型号')
     exit()
