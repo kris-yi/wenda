@@ -136,8 +136,8 @@ def start():
     # 调用百度搜索方法
     baiduSearch(result)
     # 调用阿里只能问答机器人
-    answer = aliIntelligent(question)
-    print(u'阿里小智：{}'.format(answer))
+    # answer = aliIntelligent(question)
+    # print(u'阿里小智：{}'.format(answer))
 
 
 # windows环境下获取键盘事件
