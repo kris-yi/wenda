@@ -166,7 +166,7 @@ def nextQuestion():
             if key == 13:  # Enter
                 start()
             elif key == 27:  # Esc
-                print('答题结束')
+                print(u'答题结束')
                 break
             else:
                 break
@@ -178,7 +178,7 @@ def nextQuestion():
             if key == 10:  # Enter
                 start()
             elif key == 27:  # Esc
-                print('答题结束')
+                print(u'答题结束')
                 break
             else:
                 break
