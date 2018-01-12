@@ -2,15 +2,24 @@ from PIL import ImageGrab, Image
 from aip import AipOcr
 import webbrowser, time, os, requests, urllib.parse, platform, config, json,sys
 
-cmdapp=sys.argv[1]
-cmdphone=sys.argv[2]
+# 获取命令行参数
+try:
+    cmdapp=sys.argv[1]
+    cmdphone=sys.argv[2]
+except:
+    print(u'请输入APP名字和手机型号')
+    exit()
+
 # 读取配置
 config_info = config.config(cmdapp, cmdphone)
 data = json.loads(config_info)
+
 # 图片问题区域截取位置
 pixels = (int(data['pixels_left']), int(data['pixels_top']), int(data['pixels_right']), int(data['pixels_bottom']))
+
 # 手机系统
 phone_system = data['phone_system']
+
 # 获取电脑操作系统
 pc_system = platform.system()
 
