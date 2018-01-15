@@ -7,8 +7,7 @@
 4. 下载adb,下载链接：https://adb.clockworkmod.com/，需要将adb加入环境变量
 5. 将Android手机连上电脑，打开USB调试模式
 6. 打开cmd窗口执行 adb devices 查看设备是否连接成功
-7. 打开cmd窗口执行 python wenda.py 百万英雄 华为mate9
-> 备注：只需要将 python wenda.py 百万英雄 华为mate9 中的百万英雄改成你想辅助答题的APP名字，华为mate9改成你自己的手机型号
+7. 打开cmd窗口执行 python wenda.py
 
 ### Mac+Android操作步骤
 1. 下载辅助软件
@@ -17,8 +16,7 @@
 4. 下载adb,打开终端执行 brew cask install android-platform-tools
 5. 将Android手机连上电脑，打开USB调试模式
 6. 打开终端执行 adb devices 查看设备是否连接成功
-7. 打开终端进入辅助软件存放地址，执行 python wenda.py 百万英雄 华为mate9
-> 备注：只需要将 python wenda.py 百万英雄 华为mate9 中的百万英雄改成你想辅助答题的APP名字，华为mate9改成你自己的手机型号
+7. 打开终端进入辅助软件存放地址，执行 python wenda.py
 
 ### Mac+ios操作步骤
 > 参考以上方法，自行百度，参看链接https://testerhome.com/topics/7220
