@@ -45,11 +45,11 @@ def saveQuestionImg(app_id):
     # 开始截取问题区域图片
     if int(app_id) == 1:
         question_img = open_img.crop((0, int(height) * 0.2, width, int(height) * 0.38))
-    elif int(app_id)==2:
+    elif int(app_id) == 2:
         question_img = open_img.crop((0, int(height) * 0.13, width, int(height) * 0.25))
-    elif int(app_id)==3:
-        question_img = open_img.crop((0, int(height) * 0.13, width, int(height) * 0.25))
-    elif int(app_id)==4:
+    elif int(app_id) == 3:
+        question_img = open_img.crop((0, int(height) * 0.15, width, int(height) * 0.28))
+    elif int(app_id) == 4:
         question_img = open_img.crop((0, int(height) * 0.18, width, int(height) * 0.38))
     # 保存问题区域图片
     question_img.save('question.png')
