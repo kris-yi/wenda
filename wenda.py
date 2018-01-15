@@ -48,7 +48,7 @@ def saveQuestionImg(app_id):
     elif int(app_id) == 2:
         question_img = open_img.crop((0, int(height) * 0.13, width, int(height) * 0.25))
     elif int(app_id) == 3:
-        question_img = open_img.crop((0, int(height) * 0.15, width, int(height) * 0.28))
+        question_img = open_img.crop((0, int(height) * 0.1, width, int(height) * 0.32))
     elif int(app_id) == 4:
         question_img = open_img.crop((0, int(height) * 0.18, width, int(height) * 0.38))
     # 保存问题区域图片
