@@ -1,7 +1,6 @@
 from PIL import ImageGrab, Image, ImageFilter
 from aip import AipOcr
-from matplotlib import pyplot as plt
-import webbrowser, time, os, requests, urllib.parse, platform, config, json, sys, cv2, numpy as np
+import webbrowser, time, os, requests, urllib.parse, platform, config, json, sys
 
 # 获取电脑操作系统
 pc_system = platform.system()
