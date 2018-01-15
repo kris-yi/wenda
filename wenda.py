@@ -121,14 +121,14 @@ def aliIntelligent(qustion):
 # 开始搜索
 def start(system_id, app_id):
     # 判断手机操作系统调用不同的截屏方法
-    # try:
-    #     if int(system_id) == 1:
-    #         macIosScreenImg()
-    #     elif int(system_id) == 2:
-    #         winAndroidScreenImg()
-    # except:
-    #     print(u'请配置环境并连接手机')
-    #     exit()
+    try:
+        if int(system_id) == 1:
+            macIosScreenImg()
+        elif int(system_id) == 2:
+            winAndroidScreenImg()
+    except:
+        print(u'请配置环境并连接手机')
+        exit()
     # 调用问题区域图片保存方法
     saveQuestionImg(app_id)
     # 调用百度文字识别方法
