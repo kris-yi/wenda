@@ -1,27 +1,22 @@
-from PIL import ImageGrab, Image
+from PIL import ImageGrab, Image, ImageFilter
 from aip import AipOcr
-import webbrowser, time, os, requests, urllib.parse, platform, config, json, sys
-
-# 获取命令行参数
-try:
-    cmdapp = sys.argv[1]
-    cmdphone = sys.argv[2]
-except:
-    print(u'请输入APP名字和手机型号')
-    exit()
-
-# 读取配置
-config_info = config.config(cmdapp, cmdphone)
-data = json.loads(config_info)
-
-# 图片问题区域截取位置
-pixels = (int(data['pixels_left']), int(data['pixels_top']), int(data['pixels_right']), int(data['pixels_bottom']))
-
-# 手机系统
-phone_system = data['phone_system']
+from matplotlib import pyplot as plt
+import webbrowser, time, os, requests, urllib.parse, platform, config, json, sys, cv2, numpy as np
 
 # 获取电脑操作系统
 pc_system = platform.system()
+
+
+# 定义手机系统选择方法
+def phone_system():
+    system_id = input(u'1:IOS\n2:Android\n请选择手机系统,输入序号并敲回车：')
+    return system_id
+
+
+# 定义app选择方法
+def app():
+    app_id = input(u'1：冲顶大会\n2：芝士超人\n3：百万英雄\n4：百万赢家\n请选择APP,输入序号并敲回车：')
+    return app_id
 
 
 # 电脑截屏方法
@@ -43,16 +38,23 @@ def macIosScreenImg():
 
 
 # 截取图片问题区域方法
-def saveQuestionImg():
+def saveQuestionImg(app_id):
     # 打开本地图片
     open_img = Image.open('pic.png')
+    width, height = open_img.size
     # 开始截取问题区域图片
-    question_img = open_img.crop(pixels)
+    if int(app_id) == 1:
+        question_img = open_img.crop((0, int(height) * 0.2, width, int(height) * 0.38))
+    elif int(app_id)==2:
+        question_img = open_img.crop((0, int(height) * 0.13, width, int(height) * 0.25))
+    elif int(app_id)==3:
+        question_img = open_img.crop((0, int(height) * 0.13, width, int(height) * 0.25))
+    elif int(app_id)==4:
+        question_img = open_img.crop((0, int(height) * 0.18, width, int(height) * 0.38))
     # 保存问题区域图片
     question_img.save('question.png')
 
 
-# 读取图片内容
 def getImgContent(filePath):
     with open(filePath, 'rb') as fp:
         return fp.read()
@@ -117,18 +119,18 @@ def aliIntelligent(qustion):
 
 
 # 开始搜索
-def start():
+def start(system_id, app_id):
     # 判断手机操作系统调用不同的截屏方法
-    try:
-        if phone_system == 'ios':
-            macIosScreenImg()
-        elif phone_system == 'android':
-            winAndroidScreenImg()
-    except:
-        print(u'请配置环境并连接手机')
-        exit()
+    # try:
+    #     if int(system_id) == 1:
+    #         macIosScreenImg()
+    #     elif int(system_id) == 2:
+    #         winAndroidScreenImg()
+    # except:
+    #     print(u'请配置环境并连接手机')
+    #     exit()
     # 调用问题区域图片保存方法
-    saveQuestionImg()
+    saveQuestionImg(app_id)
     # 调用百度文字识别方法
     question = baiduOrc()
     # 中文转义
@@ -156,6 +158,17 @@ def unixPressKeybord():
 
 # 开始答题
 def nextQuestion():
+    # 获取手机操作系统
+    while (True):
+        system_id = phone_system()
+        if int(system_id) == 1 or int(system_id) == 2:
+            break
+    # 获取APP
+    while (True):
+        app_id = app()
+        if int(app_id) == 1 or int(app_id) == 2 or int(app_id) == 3 or int(app_id) == 4:
+            break
+
     while (True):
         # 判断操作系统，获取键盘事件
         if pc_system == 'Windows':
@@ -164,7 +177,7 @@ def nextQuestion():
             os.system('cls')
             # 判断按下的键盘执行方法
             if key == 13:  # Enter
-                start()
+                start(system_id, app_id)
             elif key == 27:  # Esc
                 print(u'答题结束')
                 break
@@ -176,7 +189,7 @@ def nextQuestion():
             os.system('clear')
             # 判断按下的键盘执行方法
             if key == 10:  # Enter
-                start()
+                start(system_id, app_id)
             elif key == 27:  # Esc
                 print(u'答题结束')
                 break
