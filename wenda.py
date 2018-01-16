@@ -1,11 +1,11 @@
+from PIL import ImageGrab, Image, ImageFilter
+from aip import AipOcr
 import webbrowser
 import os
 import requests
 import urllib.parse
 import platform
 import sys
-from PIL import ImageGrab, Image, ImageFilter
-from aip import AipOcr
 
 # 获取电脑操作系统
 pc_system = platform.system()
